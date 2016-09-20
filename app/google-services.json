@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "646688315337",
+    "firebase_url": "https://chambersburggc.firebaseio.com",
+    "project_id": "chambersburggc",
+    "storage_bucket": "chambersburggc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646688315337:android:f090a79f2ba15d64",
+        "android_client_info": {
+          "package_name": "com.murraystudios.graham.chambersburggolfcourse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646688315337-aem59hkvlk899fd1kc9g8hn8ucdj8m5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.murraystudios.graham.chambersburggolfcourse",
+            "certificate_hash": "DDD8BA8443B1690981361F06BA43CD75C50918D3"
+          }
+        },
+        {
+          "client_id": "646688315337-a7f284o60dnjgngnrfi5c9jfil0notkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcl5CIApOAtqup3mJMqmeSrrykQPLIc4o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646688315337-a7f284o60dnjgngnrfi5c9jfil0notkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646688315337:android:bfbb56bb19b280c6",
+        "android_client_info": {
+          "package_name": "com.murraystudios.graham.wmgc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646688315337-pm8l4t36lkmeh4okh3lpmni1g6ghoocj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.murraystudios.graham.wmgc",
+            "certificate_hash": "9D82C7177F478D019DAC05AEB36031948B2C1E83"
+          }
+        },
+        {
+          "client_id": "646688315337-a7f284o60dnjgngnrfi5c9jfil0notkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcl5CIApOAtqup3mJMqmeSrrykQPLIc4o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646688315337-a7f284o60dnjgngnrfi5c9jfil0notkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

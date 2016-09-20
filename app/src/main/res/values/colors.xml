@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#607D8B</color>
+    <color name="colorPrimaryDark">#FF9800</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="blueHoles">#2196f3</color>
+    <color name="goldHoles">#fbc02d</color>
+    <color name="holeRed">#e53935</color>
+    <color name="holeHandi">#00e5ff</color>
+    <color name="holePar">#64dd17</color>
+    <color name="holeWhite">#ccbdbdbd</color>
+    <color name="playerTransparent">#76448aff</color>
+
+</resources>
