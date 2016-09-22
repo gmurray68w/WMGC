@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
     TextView strokeCounter;
     int strokes = 0;
     int holeDisplay = 0;
-    int scorePostion, p1Strokes, p2Strokes, p3Strokes,p4Strokes, player1Strokes;
+    int scorePostion, p1Strokes, p2Strokes, p3Strokes,p4Strokes, players;
     String currentStroke, p1, p2, p3, p4, holeNumber, parNumber, distanceNumber, p1N, p2N, p3N, p4N;
     TextView p1h1, p1h2, p1h3, p2h1, p2h2, p2h3, p3h1,p3h2,p3h3, p4h1, p4h2, p4h3, p1Total, p2Total, p3Total, p4Total, tvHole1Title,tvHole2Title,tvHole3Title,
     tvHole1Par, tvHole2Par, tvHole3Par, tvHole1Distance, tvHole2Distance, tvHole3Distance, player1Name, player2Name, player3Name, player4Name;
@@ -35,8 +36,40 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
             p2N = i.getString("P2_KEY");
             p3N = i.getString("P3_KEY");
             p4N = i.getString("P4_KEY");
-
         }
+        if(p1N != null && p2N == null){
+            //ONE PLAYER
+            LinearLayout p2Layout = (LinearLayout)findViewById(R.id.p2info);
+            p2Layout.setVisibility(View.GONE);
+            LinearLayout p3Layout = (LinearLayout)findViewById(R.id.p3info);
+            p3Layout.setVisibility(View.GONE);
+            LinearLayout p4Layout = (LinearLayout)findViewById(R.id.p4info);
+            p4Layout.setVisibility(View.GONE);
+            players = 1;
+        }
+        if(p2N != null && p3N == null ){
+            //2 Players
+            LinearLayout p3Layout = (LinearLayout)findViewById(R.id.p3info);
+            p3Layout.setVisibility(View.GONE);
+            LinearLayout p4Layout = (LinearLayout)findViewById(R.id.p4info);
+            p4Layout.setVisibility(View.GONE);
+            players = 2;
+        }if(p3N != null && p4N == null){
+            //3 players
+            //TODO Hide layout 4
+
+            LinearLayout p4Layout = (LinearLayout)findViewById(R.id.p4info);
+            p4Layout.setVisibility(View.GONE);
+            players = 3;
+            //TODO
+
+        }if(p4N != null){
+            //4 Players are playing
+            players =4;
+            //TODO
+        }
+
+
         //Create a random user so results are anonymous.
 
 
@@ -89,11 +122,12 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
         TextBackgroundChange();
         ImageButton increaseStroke = (ImageButton)findViewById(R.id.ibIncreaseStroke);
         ImageButton decreaseStroke = (ImageButton)findViewById(R.id.ibDecreaseStrokes);
-        ImageButton nextScore = (ImageButton)findViewById(R.id.ibNextScore);
+
         ImageButton prevScore = (ImageButton)findViewById(R.id.ibPrevScore);
         Button addScore = (Button)findViewById(R.id.btnAddScore);
         strokeCounter = (TextView)findViewById(R.id.tvStrokeCounter);
-        String p1 = "" + p1Strokes;
+        int p1Total = 0;
+
         String p2 = "" + p2Strokes;
         String p3 = "" + p3Strokes;
         String p4 = ""+ p4Strokes;
@@ -119,16 +153,7 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
                 strokeCounter.setText(currentStroke);
             }
         });
-        nextScore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                //TODO CHANGE STROKE COUNTER TO WHAT IS RETURNED FROM GETCURRENTITEM
-                scorePostion++;
-                TextBackgroundChange();
-
-            }
-        });
         prevScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,11 +178,41 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
                 //Todo go to next item
 
                 //Reset StrokeCounter
-                TextBackgroundChange();
+
                 TextChange();
                 currentStroke = strokes +"";
                 strokeCounter.setText(currentStroke);
                 scorePostion++;
+                TextBackgroundChange();
+                /**
+                if(players == 1){
+                    TextChange();
+                    currentStroke = strokes +"";
+                    strokeCounter.setText(currentStroke);
+                    scorePostion = scorePostion +4;
+                    TextBackgroundChange();
+                }if(players == 2){
+                    TextChange();
+                    currentStroke = strokes +"";
+                    strokeCounter.setText(currentStroke);
+                    scorePostion = scorePostion +3;
+                    TextBackgroundChange();
+                }if (scorePostion == 3){
+                    TextChange();
+                    currentStroke = strokes +"";
+                    strokeCounter.setText(currentStroke);
+                    scorePostion = scorePostion +2;
+                    TextBackgroundChange();
+                }if(players ==4) {
+                    TextChange();
+                    currentStroke = strokes +"";
+                    strokeCounter.setText(currentStroke);
+                    scorePostion++;
+                    TextBackgroundChange();
+                 }
+                 **/
+
+
 
 
             }
@@ -226,20 +281,20 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
     private void TextChange() {
         if(scorePostion == 0){
             p1h1.setText(currentStroke);
-            p1Strokes = strokes;
+            p1Strokes = strokes + p1Strokes;
             setFinalP1Score();
 
         }if(scorePostion == 1){
             p2h1.setText(currentStroke);
-            p2Strokes = strokes;
+            p2Strokes = strokes + p2Strokes;
             setFinalP2Score();
         }if(scorePostion == 2) {
             p3h1.setText(currentStroke);
-            p3Strokes = strokes;
+            p3Strokes = strokes + p3Strokes;
             setFinalP3Score();
         }if(scorePostion == 3){
             p4h1.setText(currentStroke);
-            p4Strokes = strokes;
+            p4Strokes = strokes + p4Strokes;
             setFianlP4Score();
             save1HolesInfo();
         }if(scorePostion == 4){
@@ -348,6 +403,7 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
     }
     private void setFinalP3Score() {
         p3Total = (TextView)findViewById(R.id.tvP3Total);
+
         p3Total.setText("" + p3Strokes);
     }
     private void setFinalP2Score() {
@@ -415,6 +471,25 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
             tvHole3Par.setText("4");
             tvHole3Distance.setText("336");
 
+        }if(holeDisplay >2 ){
+            //New round
+            holeDisplay = 0;
+            tvHole1Title.setText("1");
+            tvHole2Title.setText("2");
+            tvHole3Title.setText("3");
+            //Par Numbers
+
+            tvHole1Par.setText("4");
+            tvHole2Par.setText("4");
+            tvHole3Par.setText("3");
+            //Distance numbers
+            tvHole1Distance.setText("301");
+            tvHole2Distance.setText("276");
+            tvHole3Distance.setText("133");
+            p1Strokes = 0;
+            p2Strokes = 0;
+            p3Strokes = 0;
+            p4Strokes = 0;
         }
     }
     private void setCurrentItem() {

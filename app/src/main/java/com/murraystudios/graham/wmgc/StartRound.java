@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 public class StartRound extends AppCompatActivity {
     EditText p1Name, p2Name, p3Name, p4Name;
     String player1N, player2N, player3N, player4N;
+    int players;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,32 +19,47 @@ public class StartRound extends AppCompatActivity {
         p3Name = (EditText) findViewById(R.id.etP3Name);
         p4Name = (EditText) findViewById(R.id.etP4Name);
         Button next = (Button) findViewById(R.id.btnNext);
-
+        p2Name.setVisibility(View.GONE);
+        p3Name.setVisibility(View.GONE);
+        p4Name.setVisibility(View.GONE);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Adding player to List
 
-                player1N = p1Name.getText().toString();
-                player2N = p2Name.getText().toString();
-                player3N = p3Name.getText().toString();
-                player4N = p4Name.getText().toString();
-
                 Intent i = new Intent(StartRound.this, ThreeHoleScoreSelection.class);
 
-                if(player2N == null && player3N == null && player4N == null){
+                if(players == 0){
+                    players = 1;
+                }
+                if(players == 1){
+                    player1N = p1Name.getText().toString();
                     Bundle bundle = new Bundle();
                     bundle.putString("P1_KEY", player1N);
                     i.putExtras(bundle);
-                }
 
-                if(player3N == null && player4N == null){
+                }if (players == 2){
+                    player1N = p1Name.getText().toString();
+                    player2N = p2Name.getText().toString();
                     Bundle bundle = new Bundle();
                     bundle.putString("P1_KEY", player1N);
                     bundle.putString("P2_KEY", player2N);
                     i.putExtras(bundle);
-                }
-                if(player4N != null){
+
+                }if(players == 3){
+                    player1N = p1Name.getText().toString();
+                    player2N = p2Name.getText().toString();
+                    player3N = p3Name.getText().toString();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("P1_KEY", player1N);
+                    bundle.putString("P2_KEY", player2N);
+                    bundle.putString("P3_KEY", player3N);
+                    i.putExtras(bundle);
+                }if(players== 4){
+                    player1N = p1Name.getText().toString();
+                    player2N = p2Name.getText().toString();
+                    player3N = p3Name.getText().toString();
+                    player4N = p4Name.getText().toString();
                     Bundle bundle = new Bundle();
                     bundle.putString("P1_KEY", player1N);
                     bundle.putString("P2_KEY", player2N);
@@ -51,6 +67,10 @@ public class StartRound extends AppCompatActivity {
                     bundle.putString("P4_KEY", player4N);
                     i.putExtras(bundle);
                 }
+
+
+
+
                 startActivity(i);
             }
         });
@@ -60,17 +80,30 @@ public class StartRound extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.rb1Player) {
                     //Keep state
-                    int players = 1;
+                   players = 1;
+                    p2Name.setVisibility(View.GONE);
+                    p3Name.setVisibility(View.GONE);
+                    p4Name.setVisibility(View.GONE);
                 }
                 if (checkedId == R.id.rb2Players) {
-                    int players = 2;
+                    players = 2;
+                    p2Name.setVisibility(View.VISIBLE);
+                    p3Name.setVisibility(View.GONE);
+                    p4Name.setVisibility(View.GONE);
                 }
                 if (checkedId == R.id.rb3Players) {
-                    int players = 3;
+                     players = 3;
+                    p2Name.setVisibility(View.VISIBLE);
+                    p3Name.setVisibility(View.VISIBLE);
+                    p4Name.setVisibility(View.GONE);
                 }
                 if (checkedId == R.id.rb4Players) {
-                    int players = 4;
+                    players = 4;
+                    p2Name.setVisibility(View.VISIBLE);
+                    p3Name.setVisibility(View.VISIBLE);
+                    p4Name.setVisibility(View.VISIBLE);
                 }
+
             }
         });
     }

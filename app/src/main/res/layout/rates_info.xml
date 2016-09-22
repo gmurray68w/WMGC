@@ -73,7 +73,7 @@
                     android:id="@+id/cardView4"
                     tools:layout_constraintLeft_creator="1"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintTop_toBottomOf="@+id/cardView2">
                     <LinearLayout
                         android:orientation="vertical"
@@ -262,7 +262,8 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:contentPadding="12dp"
-                    app:layout_constraintHorizontal_bias="0.25">
+                    app:layout_constraintHorizontal_bias="0.25"
+                    android:layout_marginTop="8dp">
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
@@ -507,7 +508,7 @@
                     tools:layout_constraintRight_creator="1"
                     android:layout_marginEnd="16dp"
                     app:layout_constraintRight_toRightOf="parent"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintTop_toBottomOf="@+id/cardView4">
                     <LinearLayout
                         android:orientation="vertical"

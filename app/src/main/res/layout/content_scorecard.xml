@@ -1,463 +1,409 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_scorecard"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.murraystudios.graham.wmgc.ScorecardActivity"
-    tools:showIn="@layout/activity_scorecard"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:id="@+id/content_scorecard"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                             tools:context="com.murraystudios.graham.wmgc.ScorecardActivity"
+                                             tools:showIn="@layout/activity_scorecard"
+                                             android:orientation="vertical">
+    <HorizontalScrollView
+        android:layout_width="379dp"
+        android:layout_height="571dp"
+        android:fillViewport="true"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <android.support.constraint.ConstraintLayout
+            android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
-
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_width="match_parent">
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_width="256dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/holeNumber">
-
+                android:background="@color/holePar"
+                app:layout_constraintBottom_toTopOf="@+id/p1info"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintRight_toRightOf="parent">
                 <TextView
-                    android:text="Hole "
-                    android:layout_width="match_parent"
+                    android:text="Hole #"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvHole"
+                    android:id="@+id/textView54"
+                    android:layout_weight="1"
                     android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
+                    android:textStyle="normal|bold"/>
                 <TextView
-                    android:text="Blue (68.9/114)"
-                    android:layout_width="match_parent"
+                    android:text="1"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvBlue"
-                    android:background="@color/blueHoles"
-                    android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:text="White(57.9/110)"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvWhite"
+                    android:id="@+id/tvHoleOneTitle"
                     android:textAlignment="center"
                     android:textStyle="normal|bold"
-                    android:background="@color/holeWhite"/>
-
+                    android:textSize="18sp"/>
                 <TextView
-                    android:text="Gold(57.5/109)"
-                    android:layout_width="match_parent"
+                    android:text="2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvGold"
-                    android:background="@color/goldHoles"
+                    android:id="@+id/tvHole2Title"
                     android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:text="Red(69.1/1112)"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvRed"
-                    android:background="@color/holeRed"
-                    android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:text="Handicap"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHandiCap"
-                    android:background="@color/holeHandi"
-                    android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:text="Par"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvPar"
-                    android:background="@color/holePar"
-                    android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:text="Player 1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvPlayer1"
-                    android:fontFamily="casual"
-                    android:textSize="18sp"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="Player 2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvPlayer2"
-                    android:fontFamily="casual"
-                    android:textSize="18sp"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="Player 3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvPlayer3"
-                    android:fontFamily="casual"
-                    android:textSize="18sp"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="Player 4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvPlayer4"
-                    android:fontFamily="casual"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/hole1Column">
-
-                <TextView
-                    android:text="#1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView8"
-                    android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:text="301"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole1Blue"
-                    android:background="@android:color/holo_blue_dark"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="278"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole1White"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="230"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole1Gold"
-                    android:background="@android:color/holo_orange_light"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="229"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole1Red"
-                    android:background="@android:color/holo_red_light"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole1Handi"
-                    android:background="@android:color/holo_blue_bright"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole1Par"
-                    android:background="@android:color/holo_green_light"
                     android:textStyle="normal|bold"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView26"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:text="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView27"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
                     android:textSize="18sp"/>
-
                 <TextView
-                    android:text="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView28"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:text="3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView29"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/hole2Column">
-
-                <TextView
-                    android:text="#2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView19"
-                    android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:text="273"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole2Blue"
-                    android:background="@android:color/holo_blue_dark"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="267"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole2White"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="225"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole2Gold"
-                    android:background="@android:color/holo_orange_light"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="223"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole2Red"
-                    android:background="@android:color/holo_red_light"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole2Handi"
-                    android:background="@android:color/holo_blue_bright"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole2Par"
-                    android:background="@android:color/holo_green_light"
-                    android:textStyle="normal|bold"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView30"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:text="0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView31"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp"/>
-
-                <TextView
-                    android:text="0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView32"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:text="0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView33"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <TextView
-                    android:text="# 3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView18"
-                    android:textAlignment="center"
-                    android:textStyle="normal|bold" />
-
-                <TextView
-                    android:text="133"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole3Blue"
-                    android:background="@android:color/holo_blue_dark"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="125"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole3White"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="91"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole3Gold"
-                    android:background="@android:color/holo_orange_light"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="89"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole3Red"
-                    android:background="@android:color/holo_red_light"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="17"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvHole3Handi"
-                    android:background="@android:color/holo_blue_bright"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:text="91"
-                    android:layout_width="match_parent"
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView5"
-                    android:background="@android:color/holo_green_light"
+                    />
+                <TextView
+                    android:text="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvHole3Title"
+                    android:textAlignment="center"
                     android:textStyle="normal|bold"
-                    android:textAlignment="center" />
-
+                    android:textSize="18sp"/>
                 <TextView
-                    android:text="0"
-                    android:layout_width="match_parent"
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView35"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp" />
-
+                    android:id="@+id/textView51"
+                    />
                 <TextView
-                    android:text="0"
-                    android:layout_width="match_parent"
+                    android:text="18"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView37"
+                    android:id="@+id/textView24"
                     android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:text="0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView36"
-                    android:textAlignment="center"
-                    android:fontFamily="casual"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:text="0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView34"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:fontFamily="casual"/>
+                    android:textStyle="normal|bold"
+                    android:textSize="18sp"/>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <Button
-                android:text="Previous 3"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="343dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/button5"
-                android:layout_weight="1" />
-
-            <Button
-                android:text="Save"
-                android:layout_width="wrap_content"
+                android:id="@+id/p1info"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                tools:layout_editor_absoluteY="227dp"
+                tools:layout_editor_absoluteX="37dp">
+                <TextView
+                    android:text="Player1Name"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPlayer1Name"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:layout_width="80dp"
+                    />
+                <TextView
+                    android:text="0"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP1H1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP1H2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP1H3"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP1Total"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="343dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/button4"
-                android:layout_weight="1" />
-
-            <Button
-                android:text="Next 3 "
-                android:layout_width="wrap_content"
+                android:id="@+id/p2info"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@color/playerTransparent"
+                tools:layout_editor_absoluteY="259dp"
+                tools:layout_editor_absoluteX="37dp">
+                <TextView
+                    android:text="Player2Name"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPlayer2Name"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP2H1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP2H2"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP2H3"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP2Total"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="343dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnNextThree"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+                android:id="@+id/p3info"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                tools:layout_editor_absoluteY="290dp"
+                tools:layout_editor_absoluteX="37dp">
+                <TextView
+                    android:text="Player3Name"
+                    android:layout_width="80dp"
+                    android:id="@+id/tvPlayer3Name"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP3H1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP3H2"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP3H3"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP3Total"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="343dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/p4info"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@color/playerTransparent"
+                tools:layout_editor_absoluteY="322dp"
+                tools:layout_editor_absoluteX="37dp">
+                <TextView
+                    android:text="Player4Name"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPlayer4Name"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP4H1"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP4H2"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP4H3"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvP4Total"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="379dp"
+                android:layout_height="21dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="12dp"
+                tools:layout_editor_absoluteY="354dp"
+                tools:layout_editor_absoluteX="13dp">
+                <TextView
+                    android:text="Par #"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView53"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvParHole1"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvParHole2"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvParHole3"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvParTotal"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="343dp"
+                android:layout_height="21dp"
+                android:id="@+id/distanceInfo"
+                android:background="@color/blueHoles"
+                tools:layout_editor_absoluteY="375dp"
+                tools:layout_editor_absoluteX="37dp">
+                <TextView
+                    android:text="Distance"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/distance_title"
+                    android:layout_weight="1"
+                    android:textColor="@android:color/white"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="377"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvHole1Distance"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="320"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvHole2Distance"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="299"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvHole3Distance"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:text="2850"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvAllDistance"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="379dp"
+                android:layout_height="0dp"
+                tools:layout_editor_absoluteY="397dp"
+                tools:layout_editor_absoluteX="13dp">
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+    </HorizontalScrollView>
+</android.support.constraint.ConstraintLayout>
