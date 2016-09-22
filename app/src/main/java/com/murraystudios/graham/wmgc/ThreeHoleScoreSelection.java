@@ -153,11 +153,12 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
                 //Todo go to next item
 
                 //Reset StrokeCounter
+                TextBackgroundChange();
                 TextChange();
                 currentStroke = strokes +"";
                 strokeCounter.setText(currentStroke);
                 scorePostion++;
-                TextBackgroundChange();
+
 
             }
         });
@@ -214,8 +215,10 @@ public class ThreeHoleScoreSelection extends AppCompatActivity {
             p3h3.setBackgroundColor(Color.TRANSPARENT);
             p4h3.setBackgroundColor(Color.YELLOW);
             p4h2.setBackgroundColor(Color.TRANSPARENT);
-        }if(scorePostion > 11){
-
+        }if(scorePostion == 12){
+            p4h3.setBackgroundColor(Color.TRANSPARENT);
+            p1h1.setBackgroundColor(Color.YELLOW);
+            p2h1.setBackgroundColor(Color.TRANSPARENT);
         }
 
     }

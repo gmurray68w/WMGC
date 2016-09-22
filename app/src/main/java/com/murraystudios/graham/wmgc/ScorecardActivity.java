@@ -10,7 +10,7 @@ public class ScorecardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hole_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRates);
         setSupportActionBar(toolbar);
 
 

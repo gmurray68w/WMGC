@@ -10,5 +10,8 @@
     <color name="holePar">#64dd17</color>
     <color name="holeWhite">#ccbdbdbd</color>
     <color name="playerTransparent">#76448aff</color>
+    <color name="transG">#a48e8e8e</color>
 
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_300">#E0E0E0</color>
 </resources>

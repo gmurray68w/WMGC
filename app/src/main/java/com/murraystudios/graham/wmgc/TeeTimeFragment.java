@@ -25,6 +25,7 @@ public class TeeTimeFragment extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.popup);
         rbOne = (RadioButton)findViewById(R.id.rbOne);
         rbTwo = (RadioButton)findViewById(R.id.rbTwo);
@@ -138,6 +139,10 @@ public class TeeTimeFragment extends AppCompatActivity {
 
 
         }
+    }
+    public void show() {
+
+        setContentView(R.layout.popup);
     }
 }
 

@@ -14,22 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.murraystudios.graham.wmgc.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name="com.murraystudios.graham.wmgc.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_login"/>
         <activity
-            android:name="com.murraystudios.graham.wmgc.ScorecardActivity"
+            android:name=".ScorecardActivity"
             android:label="@string/title_activity_scorecard"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name="com.murraystudios.graham.wmgc.ScrollingActivityScoreCard"
+            android:name=".ScrollingActivityScoreCard"
             android:label="@string/title_activity_scrolling_score_card"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name="com.murraystudios.graham.wmgc.NavigationActivity"
+            android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -38,31 +38,35 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.murraystudios.graham.wmgc.StartRound"/>
-        <activity android:name="com.murraystudios.graham.wmgc.ThreeHoleScoreSelection">
+        <activity android:name=".StartRound"/>
+        <activity android:name=".ThreeHoleScoreSelection">
         </activity>
-        <activity android:name="com.murraystudios.graham.wmgc.TeeTimes">
+        <activity android:name=".TeeTimes">
         </activity>
         <activity
-            android:name="com.murraystudios.graham.wmgc.TeeTimeFragment"
+            android:name=".TeeTimeFragment"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name="com.murraystudios.graham.wmgc.EventsNewsWeatherActivity"
+            android:name=".EventsNewsWeatherActivity"
             android:label="@string/title_activity_events_news_weather"
-            android:parentActivityName="com.murraystudios.graham.wmgc.NavigationActivity"
+            android:parentActivityName=".NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.murraystudios.graham.wmgc.NavigationActivity"/>
         </activity>
         <activity
-            android:name="com.murraystudios.graham.wmgc.ClubHouseRatesActivity"
+            android:name=".ClubHouseRatesActivity"
             android:label="@string/title_activity_club_house_rates"
-            android:parentActivityName="com.murraystudios.graham.wmgc.NavigationActivity"
+            android:parentActivityName=".NavigationActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.murraystudios.graham.wmgc.NavigationActivity"/>
+        </activity>
+        <activity
+            android:name=".MainLoginActivity"
+            android:label="@string/title_activity_main_login">
         </activity>
     </application>
 
