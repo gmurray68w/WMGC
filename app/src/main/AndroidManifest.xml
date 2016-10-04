@@ -46,15 +46,7 @@
         <activity
             android:name=".TeeTimeFragment"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".EventsNewsWeatherActivity"
-            android:label="@string/title_activity_events_news_weather"
-            android:parentActivityName=".NavigationActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.murraystudios.graham.wmgc.NavigationActivity"/>
-        </activity>
+
         <activity
             android:name=".ClubHouseRatesActivity"
             android:label="@string/title_activity_club_house_rates"
@@ -67,6 +59,8 @@
         <activity
             android:name=".MainLoginActivity"
             android:label="@string/title_activity_main_login">
+        </activity>
+        <activity android:name=".EventsActivity">
         </activity>
     </application>
 

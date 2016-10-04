@@ -7,13 +7,14 @@ public class TeeTimesList {
     private String mPartyName;
     private String mPartyAmount;
     private String mTime;
-    private String mCheckedIn;
+
 
     public TeeTimesList(String partyName,String partyAmount ,String date, String time){
-        this.mDate = date;
-        this.mTime = time;
-        this.mPartyName = partyName;
-        this.mPartyAmount = partyAmount;
+
+        mPartyName = partyName;
+        mPartyAmount = partyAmount;
+        mDate = date;
+        mTime = time;
 
     }
     public String getmPartyName() {
@@ -28,5 +29,6 @@ public class TeeTimesList {
     public String getmDate() {
         return mDate;
     }
+
 
 }

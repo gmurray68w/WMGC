@@ -17,11 +17,10 @@
     android:orientation="vertical">
 
 
-    <Button
-        android:text="Reserve Tee Time"
+    <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnAddTT"/>
+        layout="@layout/popup"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

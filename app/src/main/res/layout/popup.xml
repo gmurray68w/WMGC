@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_vertical"
+                  android:padding="8dp">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -21,7 +19,10 @@
                 android:id="@+id/etPartyName"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:hint="Party Name"/>
+                android:hint="Party Name"
+                android:paddingLeft="75dp"
+                android:paddingRight="75dp"
+                android:selectAllOnFocus="true"/>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -38,25 +39,29 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/rbOne"
                     android:layout_weight="1"
-                    android:onClick="PlayerAmount"/>
+                    android:onClick="PlayerAmount"
+                    android:checked="true"/>
                 <RadioButton
                     android:text="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/rbTwo"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:onClick="PlayerAmount"/>
                 <RadioButton
                     android:text="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/rbThree"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:onClick="PlayerAmount"/>
                 <RadioButton
                     android:text="4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/rbFour"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:onClick="PlayerAmount"/>
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -75,7 +80,8 @@
                 android:inputType="date"
                 android:ems="10"
                 android:id="@+id/etDate"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textAlignment="center"/>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -93,24 +99,33 @@
                 android:inputType="time"
                 android:ems="10"
                 android:id="@+id/etTime"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:textAlignment="center"/>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:text="Save"
+                android:text="Calandar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnCalendar"
+                android:layout_weight="1"/>
+            <Button
+                android:text="Add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnSave"
                 android:layout_weight="1"/>
             <Button
-                android:text="Cancel"
+                android:text="Clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnCancel"
                 android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+

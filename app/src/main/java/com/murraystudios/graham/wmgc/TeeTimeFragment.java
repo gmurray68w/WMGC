@@ -3,13 +3,18 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -17,24 +22,27 @@ import static java.lang.String.valueOf;
 /**
  * Created by Gmurray68w on 9/19/2016.
  */
-public class TeeTimeFragment extends AppCompatActivity {
+public class TeeTimeFragment extends Fragment {
     RadioButton rbOne, rbTwo, rbThree, rbFour;
     private int mYear, mMonth, mDay, mHour, mMinute, playerQ;
     EditText txtDate, txtTime, pName;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        super.onCreate(savedInstanceState);
+    String players;
+    public TeeTimeFragment(){
 
-        setContentView(R.layout.popup);
-        rbOne = (RadioButton)findViewById(R.id.rbOne);
-        rbTwo = (RadioButton)findViewById(R.id.rbTwo);
-        rbThree = (RadioButton)findViewById(R.id.rbThree);
-        rbFour = (RadioButton)findViewById(R.id.rbFour);
-        pName = (EditText) findViewById(R.id.etPartyName);
-        Button setDate = (Button) findViewById(R.id.btnSetDate);
-        txtDate = (EditText)findViewById(R.id.etDate);
-        txtTime = (EditText)findViewById(R.id.etTime);
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.popup, container);
+
+        rbOne = (RadioButton)view.findViewById(R.id.rbOne);
+        rbTwo = (RadioButton)view.findViewById(R.id.rbTwo);
+        rbThree = (RadioButton)view.findViewById(R.id.rbThree);
+        rbFour = (RadioButton)view.findViewById(R.id.rbFour);
+        pName = (EditText) view.findViewById(R.id.etPartyName);
+        Button setDate = (Button)view.findViewById(R.id.btnSetDate);
+        txtDate = (EditText)view.findViewById(R.id.etDate);
+        txtTime = (EditText)view.findViewById(R.id.etTime);
 
 
         setDate.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +52,7 @@ public class TeeTimeFragment extends AppCompatActivity {
                 mYear = c.get(Calendar.YEAR);
                 mMonth = c.get(Calendar.MONTH);
                 mDay = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(TeeTimeFragment.this,
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
                         new DatePickerDialog.OnDateSetListener() {
 
                             @Override
@@ -59,7 +67,7 @@ public class TeeTimeFragment extends AppCompatActivity {
             }
 
         });
-        Button setTime = (Button)findViewById(R.id.btnSetTime);
+        Button setTime = (Button)view.findViewById(R.id.btnSetTime);
         setTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +77,7 @@ public class TeeTimeFragment extends AppCompatActivity {
                 mMinute = c.get(Calendar.MINUTE);
 
                 // Launch Time Picker Dialog
-                TimePickerDialog timePickerDialog = new TimePickerDialog(TeeTimeFragment.this,
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(),
                         new TimePickerDialog.OnTimeSetListener() {
 
                             @Override
@@ -84,25 +92,27 @@ public class TeeTimeFragment extends AppCompatActivity {
 
 
             });
-        Button save = (Button)findViewById(R.id.btnSave);
+        Button save = (Button)view.findViewById(R.id.btnSave);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = pName.getText().toString();
-                String players = Integer.toString(playerQ);
+               players = "" + playerQ;
                 String date = txtDate.getText().toString();
                 String time = txtTime.getText().toString();
-                String reservation = name +" ," + players+ " ," + date + " ," + time;
-                Intent i = new Intent(TeeTimeFragment.this, TeeTimes.class);
+                String reservation = name +" = SET NAME ," + players+ "= PLAYERS ," + date + " ," + time;
+                Intent i = new Intent(getContext(), TeeTimes.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("N_KEY", name);
                 bundle.putString("P_KEY", players);
                 bundle.putString("D_KEY", date);
                 bundle.putString("T_KEY", time);
                 i.putExtras(bundle);
+                Toast.makeText(getContext(), "" + reservation, Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
+        return view;
     }
     public void PlayerAmount(View view){
         boolean checked = ((RadioButton)view).isChecked();
@@ -113,6 +123,8 @@ public class TeeTimeFragment extends AppCompatActivity {
                     rbThree.setChecked(false);
                     rbFour.setChecked(false);
                 playerQ = 1;
+                Toast.makeText(getContext(), "" + playerQ, Toast.LENGTH_SHORT).show();
+
                 break;
 
             case R.id.rbTwo:
@@ -121,13 +133,15 @@ public class TeeTimeFragment extends AppCompatActivity {
                 rbThree.setChecked(false);
                 rbFour.setChecked(false);
                     playerQ =2;
+                Toast.makeText(getContext(), "" + playerQ, Toast.LENGTH_SHORT).show();
                     break;
             case R.id.rbThree:
                 if(checked)
                     rbTwo.setChecked(false);
                 rbOne.setChecked(false);
                 rbFour.setChecked(false);
-                    playerQ = 3;
+                playerQ = 3;
+                Toast.makeText(getContext(), "" + playerQ, Toast.LENGTH_SHORT).show();
                     break;
             case R.id.rbFour:
                 if(checked)
@@ -135,6 +149,7 @@ public class TeeTimeFragment extends AppCompatActivity {
                 rbThree.setChecked(false);
                 rbOne.setChecked(false);
                     playerQ =4;
+                Toast.makeText(getContext(), "" + playerQ, Toast.LENGTH_SHORT).show();
                     break;
 
 
@@ -142,7 +157,7 @@ public class TeeTimeFragment extends AppCompatActivity {
     }
     public void show() {
 
-        setContentView(R.layout.popup);
+
     }
 }
 

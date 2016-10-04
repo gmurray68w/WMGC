@@ -10,10 +10,10 @@ import java.util.List;
  * Created by Gmurray68w on 9/18/2016.
  */
 public class TeeTimesAdapter extends RecyclerView.Adapter<TeeTimesAdapter.MyViewHolder3> {
-    private List<TeeTimesList> tList;
+    private List<TeeTimesList> teeTime;
     TextView ttDate, ttTime, ttName, ttPlayers;
     public TeeTimesAdapter(List<TeeTimesList> teeTime) {
-        this.tList = teeTime;
+        this.teeTime = teeTime;
     }
     public class MyViewHolder3 extends RecyclerView.ViewHolder {
         public MyViewHolder3 (View view2 ) {
@@ -32,7 +32,7 @@ public class TeeTimesAdapter extends RecyclerView.Adapter<TeeTimesAdapter.MyView
     }
     @Override
     public void onBindViewHolder(TeeTimesAdapter.MyViewHolder3 holder, int position) {
-        TeeTimesList teeList = tList.get(position);
+        TeeTimesList teeList = teeTime.get(position);
         ttName.setText(teeList.getmPartyName());
         ttPlayers.setText(teeList.getmPartyAmount());
         ttDate.setText(teeList.getmDate());
@@ -41,6 +41,7 @@ public class TeeTimesAdapter extends RecyclerView.Adapter<TeeTimesAdapter.MyView
     }
     @Override
     public int getItemCount() {
-        return tList.size();
+        return teeTime.size();
     }
+
 }

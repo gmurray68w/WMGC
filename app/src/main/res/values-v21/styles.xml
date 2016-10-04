@@ -1,6 +1,6 @@
 <resources>
 
-    <color name="colorPrimary">#607D8B</color>
+    <color name="colorPrimary">#607d8b</color>
     <color name="colorPrimaryDark">#FF9800</color>
 
     <style name="AppTheme.NoActionBar">

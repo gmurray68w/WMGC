@@ -53,7 +53,8 @@
                 android:textAlignment="center"
                 android:textStyle="normal|bold"
                 android:textSize="18sp"
-                android:layout_marginTop="6dp"/>
+                android:layout_marginTop="6dp"
+                android:textColor="@android:color/black"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -251,7 +252,8 @@
                     android:fontFamily="sans-serif-smallcaps"
                     android:textStyle="normal|bold"
                     android:textSize="18sp"
-                    android:layout_marginTop="6dp"/>
+                    android:layout_marginTop="6dp"
+                    android:textColor="@android:color/black"/>
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -272,7 +274,8 @@
                         android:id="@+id/textView20"
                         android:layout_weight="1"
                         android:gravity="center_vertical|center_horizontal"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@android:color/black"/>
 
                     <TextView
                         android:text="Hole 9"

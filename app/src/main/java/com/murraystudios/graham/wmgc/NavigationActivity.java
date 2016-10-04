@@ -94,6 +94,13 @@ public class NavigationActivity extends AppCompatActivity
         });
         //TODO Make activity for Rates
         FloatingActionButton fabConsierge = (FloatingActionButton)findViewById(R.id.fabConsierge);
+        fabConsierge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(NavigationActivity.this, EventsActivity.class);
+                startActivity(i);
+            }
+        });
         //TODO Make consierge activity
         FloatingActionButton fabReserve = (FloatingActionButton)findViewById(R.id.fabReservation);
         fabReserve.setOnClickListener(new View.OnClickListener() {
